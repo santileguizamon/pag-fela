@@ -17,11 +17,11 @@ export default function FAQ({ onOpenSizeGuide }) {
     },
     {
       q: "¿De qué materiales son las piezas?",
-      a: "Trabajamos con Plata 925 maciza de primera calidad y baños de Oro 18k de 5 micrones (alto espesor). También ofrecemos opciones en bronce pulido de autor para modelos seleccionados."
+      a: "Trabajamos con plata 925, bronce y alpaca. Si estás buscando una pieza en otro metal, podés consultarnos."
     },
     {
       q: "¿Cuánto demora la elaboración de mi pedido?",
-      a: "Si la pieza en tu talle está en stock en el taller, la despachamos en 24 a 48 hs. Si requiere fabricación a medida desde cero, la confección artesanal demora entre 3 y 7 días hábiles."
+      a: "- Cada pieza se elabora especialmente para cada persona, por lo que el tiempo de producción es de 15 a 20 días. \n- Si necesitás recibir tu pedido antes, contamos con una opción express de 5 a 7 días hábiles, con un recargo del 15% sobre el valor de la pieza."
     },
     {
       q: "¿Hacen envíos a todo el país?",

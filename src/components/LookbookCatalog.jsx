@@ -55,17 +55,10 @@ export default function LookbookCatalog({
                 {[
                   { id: 'todos', label: 'Todos los metales' },
                   { id: 'plata', label: 'Plata 925' },
-                  { id: 'oro', label: 'Baño de Oro 18k' }
+                  { id: 'bronce', label: 'Bronce (oro)' },
+                  { id: 'alpaca', label: 'Alpaca' }
                 ].map((m) => (
-                  <button
-                    key={m.id}
-                    onClick={() => setSelectedMaterialFilter(m.id)}
-                    className={`block text-left transition-colors ${
-                      selectedMaterialFilter === m.id
-                        ? 'text-[#0D0D0D] font-medium'
-                        : 'hover:text-[#0D0D0D]'
-                    }`}
-                  >
+                  <button key={m.id} onClick={() => setSelectedMaterialFilter(m.id)} className="block text-left transition-colors hover:text-[#0D0D0D]">
                     — {m.label}
                   </button>
                 ))}
