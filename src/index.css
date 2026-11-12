@@ -1,0 +1,248 @@
+@import "tailwindcss";
+
+/* GOTA — New York Editorial Palette */
+:root {
+  /* Backgrounds — cold bone, not warm linen */
+  --bg-base: #F2F0ED;
+  --bg-surface: #ECEAE6;
+  --bg-deep: #E5E2DD;
+
+  /* Text — near-black, not warm brown */
+  --text-main: #0D0D0D;
+  --text-muted: #6B6B6B;
+  --text-light: #9A9A9A;
+
+  /* Accent — steel/silver, not gold */
+  --accent-steel: #8C8C8C;
+  --accent-line: rgba(13, 13, 13, 0.09);
+
+  --font-agrandir: 'Agrandir', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-agrandir);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  font-family: var(--font-agrandir);
+}
+
+body {
+  font-family: var(--font-agrandir);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-color: var(--bg-base);
+  color: var(--text-main);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(13, 13, 13, 0.12);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0D0D0D;
+}
+
+/* Font Classes mapped to Agrandir */
+.font-serif,
+.font-sans,
+h1, h2, h3, h4, p, span, button, a {
+  font-family: 'Agrandir', 'Plus Jakarta Sans', system-ui, sans-serif !important;
+}
+
+/* Primary CTA Button — New York minimal */
+.btn-whatsapp-quiet {
+  background-color: #0D0D0D;
+  color: #F2F0ED;
+  border: 1px solid #0D0D0D;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-agrandir);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+.btn-whatsapp-quiet:hover {
+  background-color: #25D366;
+  border-color: #25D366;
+  color: #FFFFFF;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.2);
+}
+
+/* Secondary outline button */
+.btn-outline {
+  background-color: transparent;
+  color: #0D0D0D;
+  border: 1px solid rgba(13, 13, 13, 0.2);
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-agrandir);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+.btn-outline:hover {
+  border-color: #0D0D0D;
+  background-color: #0D0D0D;
+  color: #F2F0ED;
+}
+
+/* Floating Sticky WhatsApp Button */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 2.25rem;
+  right: 2.25rem;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #0D0D0D;
+  color: #F2F0ED;
+  padding: 0.85rem 1.5rem;
+  border-radius: 50px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(13, 13, 13, 0.15);
+}
+.floating-whatsapp:hover {
+  background-color: #25D366;
+  color: white;
+  border-color: #25D366;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 45px rgba(37, 211, 102, 0.3);
+}
+
+/* Pulse dot on floating button */
+.pulse-badge {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #25D366;
+  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+  animation: pulse-ring 2s ease-out infinite;
+}
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70%  { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(13, 13, 13, 0.6);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background-color: #F2F0ED;
+  color: #0D0D0D;
+  max-width: 920px;
+  width: 94%;
+  max-height: 92vh;
+  overflow-y: auto;
+  border: 1px solid rgba(13, 13, 13, 0.08);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.drawer-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 440px;
+  max-width: 90vw;
+  height: 100vh;
+  background-color: #F2F0ED;
+  color: #0D0D0D;
+  z-index: 110;
+  border-left: 1px solid rgba(13, 13, 13, 0.08);
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  animation: slideLeft 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* Section label — unified style (no font-mono) */
+.section-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-weight: 400;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.ring-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px dashed var(--accent-steel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: all 0.2s ease;
+}
